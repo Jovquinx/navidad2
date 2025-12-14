@@ -9,28 +9,30 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-image: url('https://i.pinimg.com/1200x/c0/16/f0/c016f01b5d621c2830803ddc4170c7f0.jpg');
+            background-color: #7620b0; /* Color de respaldo */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Para que el fondo no se mueva al bajar */
             text-align: center;
             padding: 20px;
             margin: 0;
-            background-color: #ffffff;
-
-            
         }
 
         h1 {
-            color: #000000; /* Rojo Navidad */
-            margin-bottom: 10px;
+            color: #ffffff; /* Cambié a blanco para que se lea mejor sobre el rojo */
+            margin: 0 0 10px 0;
+            font-size: 1.8em;
         }
 
         p {
-            color: #000000;
-            margin-bottom: 30px;
+            color: #ffffff; /* Texto blanco en el header */
+            margin: 0;
         }
 
         /* Contenedor de la cuadrícula */
         .gift-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Un poco más ancho para celulares */
             gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
@@ -41,7 +43,7 @@
             background: white;
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.2s;
         }
 
@@ -53,7 +55,7 @@
         .gift-img {
             width: 100%;
             height: 200px;
-            object-fit: cover; /* Recorta la imagen para que encaje bien */
+            object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
         }
@@ -66,10 +68,17 @@
             color: #333;
         }
 
+        .parrafos {
+            font-size: 15px;
+            color: #555;
+            margin: 10px 0;
+            font-weight: normal;
+        }
+
         /* Botón de compra */
         .buy-btn {
             display: inline-block;
-            background-color: #2e8b57; /* Verde Navidad */
+            background-color: #2e8b57;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -83,27 +92,42 @@
             background-color: #246b43;
         }
 
+        /* ESTA ES LA PARTE QUE ARREGLA EL CELULAR */
         .header {
-            margin-bottom: 40px;
             background-color: #7e0404;
-            width: 500px;
-            height: 100px;
-            border-radius: 5px;
-            margin: 50px auto 60px auto;
-
             
+            /* Ancho flexible: Ocupa el 90% de la pantalla, pero nunca más de 500px */
+            width: 90%; 
+            max-width: 500px;
+            
+            /* Altura automática para que el texto no se salga */
+            height: auto; 
+            padding: 20px; /* Relleno interno para que el texto no toque los bordes */
+            
+            border-radius: 15px;
+            margin: 30px auto 40px auto; /* Centrado automático */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        .parrafos {
-            font-size: 15px;
-            color: #555;
-            margin: 10px 0;
+
+        /* Ajustes específicos para pantallas pequeñas (Celulares) */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Menos margen en los bordes del celular */
+            }
+            .header {
+                margin-top: 20px;
+                width: 95%; /* Aprovechar más espacio en pantalla chica */
+            }
+            h1 {
+                font-size: 1.5em; /* Título un poco más pequeño */
+            }
         }
     </style>
 </head>
 <body>
 
    <div class="header">
-     <h1>🎄 Mi Lista de Navidad - Kako 2025 🎄 </h1>
+     <h1>🎄 Mi Lista de Navidad 🎄<br>Kako 2025</h1>
      <p>Estas son algunas cositas que me harían muy feliz este año.</p>   
    </div>
 
@@ -113,33 +137,27 @@
             <img src="https://rimage.ripley.cl/home.ripley/Attachment/WOP/1/2000393064106/full_image-2000393064106" alt="Regalo 1" class="gift-img">
             <div class="gift-title">Pack Boxer Negros
                 <p class="parrafos">
-                Las opciones son solo referencia pueden ser Top ,Palmers o una buena marca ,pero negros y talla S.
+                Las opciones son solo referencia. Pueden ser Top, Palmers o buena marca, pero negros y talla S.
                 </p>
-                Valor aproximado: $14.000
+                <p style="font-size: 0.9em; color: #7e0404;">Valor aprox: $14.000</p>
             </div>
-            <a href="https://simple.ripley.cl/pack-x3-boxer-hombre-top-2000393064076?gad_campaignid=23354271805&gad_source=1&gclid=Cj0KCQiAuvTJBhCwARIsAL6DemjHkUukWC1QhN7wmwPMhgbrU8AnsQO3rYNLXkPCplRaUJEdk4kpl1saArSmEALw_wcB&color_80=multicolor&s=mdco" target="_blank" class="buy-btn">Opcion 1</a>
-            <a href="https://www.paris.cl/pack-3-boxer-medio-negro-298215.html" target="_blank" class="buy-btn">Opcion 2</a>
-            
-            <a href="https://www.paris.cl/pack-3-boxer-de-algodon-202449006.html?gclsrc=aw.ds&gad_source=1&gad_campaignid=21683653569&gbraid=0AAAAADAY7cZb5fDSabumzwKIpQ2SPItoq&gclid=Cj0KCQiAuvTJBhCwARIsAL6DemhixeRc66XMzYQB_o34MFjIIZrDJ2ksMqFTRW381n4JoSWcWOtvwB4aAqm4EALw_wcB" target="_blank" class="buy-btn">Opcion 3</a>
+            <a href="https://simple.ripley.cl/pack-x3-boxer-hombre-top-2000393064076" target="_blank" class="buy-btn">Opción 1</a>
+            <a href="https://www.paris.cl/pack-3-boxer-medio-negro-298215.html" target="_blank" class="buy-btn">Opción 2</a>
         </div>
 
         <div class="gift-card">
             <img src="https://static.preunic.cl/ns8mby3apwle25kgym8ft8qw5fto" alt="Regalo 2" class="gift-img">
-            <div class="gift-title">Pack Rutina Anti-I Serum+LP + Micelar Garnier
-                <p class="parrafos">Set Garnier para cuidarme la cara.
-                </p>
-                Valor aproximado: $13.000
+            <div class="gift-title">Pack Skincare Garnier
+                <p class="parrafos">Set Garnier Anti-Imperfecciones (Serum + Micelar) para cuidarme la cara.</p>
+                <p style="font-size: 0.9em; color: #7e0404;">Valor aprox: $13.000</p>
             </div>
-            <a href="https://salcobrand.cl/products/pack-rutina-anti-imperfecciones-serum-micelar?srsltid=AfmBOooptTiO_YU5CUOJH4OrI3OplHk-uIX33irHRTCMp3LEt7nkkQ3r" target="_blank" class="buy-btn">Opcion 1</a>
-            <a href="https://salcobrand.cl/products/pack-rutina-anti-imperfecciones-serum-micelar?srsltid=AfmBOooptTiO_YU5CUOJH4OrI3OplHk-uIX33irHRTCMp3LEt7nkkQ3r" target="_blank" class="buy-btn">Opcion 2</a>
-
+            <a href="https://salcobrand.cl/products/pack-rutina-anti-imperfecciones-serum-micelar" target="_blank" class="buy-btn">Ver Pack</a>
         </div>
 
         <div class="gift-card">
-            <img src="https://static.preunic.cl/ns8mby3apwle25kgym8ft8qw5fto" alt="Regalo 3" class="gift-img">
+            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800" alt="Regalo 3" class="gift-img">
             <div class="gift-title">Libro de Cocina
-                <p class="parrafos"> Un libro de recetas para aprender a cocinar cosas nuevas.
-                </p>    
+                <p class="parrafos">Un libro de recetas para aprender a cocinar cosas nuevas.</p>    
             </div>
             <a href="https://buscalibre.com" target="_blank" class="buy-btn">Ver en Tienda</a>
         </div>
